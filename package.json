@@ -1,0 +1,27 @@
+{
+  "name": "Adobe_Acrobat_Sign",
+  "version": "1.0.0",
+  "description": "A package that bundles all methods from Adobe's Acrobat Sign REST API (version 6) into a node module",
+  "main": "dist/index.js",
+  "repository": "https://github.com/RegiReis7/adobe_acrobat_sign_package",
+  "author": "Reginaldo Reis",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "prestart": "yarn build",
+    "start": "node .",
+    "dev": "tsnd --respawn --ignore-watch node_modules ./src/index.ts"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@types/node": "^18.0.3",
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.3",
+    "dotenv": "^16.0.1",
+    "ts-node": "^10.8.2"
+  }
+}
