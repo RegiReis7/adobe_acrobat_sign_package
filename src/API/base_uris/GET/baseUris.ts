@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BaseUris, Headers } from "../../types";
+import { BaseUris, Headers } from "../../config/types";
 
 export default async function getBaseUris(headers : Headers): Promise<BaseUris> {
     try {

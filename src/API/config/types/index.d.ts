@@ -1,6 +1,6 @@
 export type BaseUris = {
-  apiAccessPoint: String;
-  webAccessPoint: String;
+  apiAccessPoint: string;
+  webAccessPoint: string;
 };
 
 export type Headers = {

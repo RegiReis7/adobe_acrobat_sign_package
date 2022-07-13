@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Headers } from "../../types";
+import { Headers } from "../../config/types";
 
 export async function getAllAgreemets(url : string, headers: Headers) {
     try {

@@ -1,4 +1,4 @@
-import { Headers } from "../types"
+import { Headers } from "./types"
 import getBaseUris from  "../base_uris/GET/baseUris"
 
 export class APIConfig {
@@ -18,5 +18,9 @@ export class APIConfig {
     } catch (error) {
       throw new Error(error)
     }
+  }
+
+  getHeaders(){
+    return this.headers;
   }
 }
