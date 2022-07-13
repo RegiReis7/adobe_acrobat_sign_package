@@ -1,7 +1,7 @@
 import { Headers } from "../types"
 import getBaseUris from  "../base_uris/GET/baseUris"
 
-class APIConfig {
+export class APIConfig {
   private headers: Headers;
 
   constructor(token: string, api_user: string) {
