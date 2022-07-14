@@ -4,7 +4,7 @@ import getBaseUris from  "../base_uris/GET/baseUris"
 export class APIConfig {
   private headers: Headers;
 
-  constructor(readonly token: string, readonly api_user: string) {
+  constructor(token: string, api_user: string) {
     this.headers = {
       Authorization: `Bearer ${token}`,
       "x-api-user": `email:${api_user}`,
