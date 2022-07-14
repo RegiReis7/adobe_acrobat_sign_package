@@ -8,6 +8,9 @@ async function main() {
     );
 
     console.log((await Adobe_Sign.agreements.getMethods.getAgreementById("CBJCHBCAABAAU94zE3iigR0TeK5qII8-mLctOn9T65lL")).createdDate)
+
+    console.log((await Adobe_Sign.agreements.getMethods.getAgreementDocumentUrl("CBJCHBCAABAAU94zE3iigR0TeK5qII8-mLctOn9T65lL")).url)
+    
   } catch (error) {
     throw new Error(error);
   }
