@@ -1,7 +1,8 @@
-import { APIConfig } from "./API/config";
+import { AcrobatSign } from "./libs/acrobatSign";
 
-const Adobe_Sign = new APIConfig('3AAABLblqZhDsaXQRsxlUuk6tM3aqj6XYGbi8uGRYJUXruPeg0uPUzrtLuQbWB8lfQRkp-NPQ7LCCFN7dGB8WLgivQLQqE3VS', 'reginaldo.reis+demo2@vilt-group.com')
+const Adobe_Sign = new AcrobatSign('3AAABLblqZhDsaXQRsxlUuk6tM3aqj6XYGbi8uGRYJUXruPeg0uPUzrtLuQbWB8lfQRkp-NPQ7LCCFN7dGB8WLgivQLQqE3VS', 'reginaldo.reis+demo2@vilt-group.com')
 
-Adobe_Sign.getAPIUrl().then((result) => {
+Adobe_Sign.agreements.getMethods.getAgreements().then((result) => {
     console.log(result)
-}).catch((e) => console.error(e))
+}).catch((error) => console.error(error))
+

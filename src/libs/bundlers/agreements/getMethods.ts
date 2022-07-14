@@ -1,5 +1,5 @@
-import { getAllAgreemets } from "../../API/agreements/GET/allAgreements";
-import { APIConfig } from "../../API/config";
+import { getAllAgreemets } from "../../../API/agreements/GET/allAgreements";
+import { APIConfig } from "../../../API/config";
 
 export class AgreementsGetMehotds {
   private config: APIConfig;
@@ -8,10 +8,11 @@ export class AgreementsGetMehotds {
     this.config = configs;
   }
 
-  async getAgreements() {
+  async getAgreements(nextCursor?: string) {
     return getAllAgreemets(
       await this.config.getAPIUrl(),
-      this.config.getHeaders()
+      this.config.getHeaders(),
+      nextCursor
     );
   }
 }

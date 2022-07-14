@@ -1,14 +1,49 @@
 import axios from "axios";
 import { Headers } from "../../config/types";
 
-export async function getAllAgreemets(url : string, headers: Headers) {
-    try {
-        const responseData = await axios.get(url, {
-            headers
-        })
+export interface AgreementsListResponse {
+  userAgreementList: UserAgreementList[];
+  page: {
+    nextCursor: string;
+  };
+}
+export interface UserAgreementList {
+  id: string;
+  parentId: string;
+  type: string;
+  name: string;
+  groupId: string;
+  displayDate: Date;
+  displayParticipantSetInfos: DisplayParticipantSetInfo[];
+  latestVersionId: string;
+  status: string;
+  esign: boolean;
+  hidden: boolean;
+}
 
-        return responseData.data;
-    } catch (error) {
-        throw new Error(error)
-    }
+export interface DisplayParticipantSetInfo {
+  displayUserSetMemberInfos: DisplayUserSetMemberInfo[];
+}
+
+export interface DisplayUserSetMemberInfo {
+  fullName: string;
+  email: string;
+  company: string;
+}
+
+export async function getAllAgreemets(
+  url: string,
+  headers: Headers,
+  nextCursor?: string
+): Promise<AgreementsListResponse> {
+  try {
+    const responseData = await axios.get(`${url}/agreements`, {
+      headers,
+      params: nextCursor ? { cursor: nextCursor } : "",
+    });
+
+    return responseData.data;
+  } catch (error) {
+    throw new Error(error);
+  }
 }
