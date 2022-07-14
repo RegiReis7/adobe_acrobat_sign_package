@@ -10,6 +10,8 @@ async function main() {
     console.log((await Adobe_Sign.agreements.getMethods.getAgreementById("CBJCHBCAABAAU94zE3iigR0TeK5qII8-mLctOn9T65lL")).createdDate)
 
     console.log((await Adobe_Sign.agreements.getMethods.getAgreementDocumentUrl("CBJCHBCAABAAU94zE3iigR0TeK5qII8-mLctOn9T65lL")).url)
+
+    console.log((await Adobe_Sign.agreements.getMethods.getAgreementEvents("CBJCHBCAABAAU94zE3iigR0TeK5qII8-mLctOn9T65lL")).events.map((e) => e.description))
     
   } catch (error) {
     throw new Error(error);
