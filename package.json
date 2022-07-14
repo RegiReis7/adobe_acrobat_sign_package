@@ -7,6 +7,7 @@
   "author": "Reginaldo Reis",
   "license": "MIT",
   "private": false,
+  "files": ["/dist"],
   "scripts": {
     "build": "tsc",
     "prestart": "yarn build",
