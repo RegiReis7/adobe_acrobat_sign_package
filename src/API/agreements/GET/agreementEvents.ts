@@ -61,14 +61,14 @@ export async function getAgreementEvents(
   agreementId: string
 ): Promise<AgreementEvents> {
   try {
-    const responseData = await axios.get(
+    const response = await axios.get(
       `${url}/agreements/${agreementId}/events`,
       {
         headers,
       }
     );
 
-    return responseData.data
+    return response.data
   } catch (error) {
     throw new Error(error);
   }

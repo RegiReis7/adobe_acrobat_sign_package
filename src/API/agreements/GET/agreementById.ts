@@ -260,11 +260,11 @@ export async function getAgreementById(
   agreementId: string
 ): Promise<AgreementInfo> {
   try {
-    const responseData = await axios.get(`${url}/agreements/${agreementId}`, {
+    const response = await axios.get(`${url}/agreements/${agreementId}`, {
       headers,
     });
 
-    return responseData.data;
+    return response.data;
   } catch (error) {
     throw new Error(error);
   }

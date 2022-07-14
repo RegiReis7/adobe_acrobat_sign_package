@@ -37,12 +37,12 @@ export async function getAllAgreemets(
   nextCursor?: string
 ): Promise<AgreementsListResponse> {
   try {
-    const responseData = await axios.get(`${url}/agreements`, {
+    const response = await axios.get(`${url}/agreements`, {
       headers,
       params: nextCursor ? { cursor: nextCursor } : "",
     });
 
-    return responseData.data;
+    return response.data;
   } catch (error) {
     throw new Error(error);
   }
