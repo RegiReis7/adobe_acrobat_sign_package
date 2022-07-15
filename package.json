@@ -1,5 +1,5 @@
 {
-  "name": "adobe_acrobat_sign_package",
+  "name": "adobe-acrobat-sign-bundle",
   "version": "1.2.0",
   "description": "A package that bundles some methods from Adobe's Acrobat Sign REST API (version 6) into a node module",
   "main": "dist/index.js",
