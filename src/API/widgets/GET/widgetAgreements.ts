@@ -44,8 +44,8 @@ export async function getWidgetAgreements(
     const response = await axios.get(`${url}/widgets/${widgetId}/agreements`, {
       headers,
       params: nextCursor
-        ? { cursor: nextCursor, pageSize: 20 }
-        : { pageSize: 20 },
+        ? { cursor: nextCursor, pageSize: 50 }
+        : { pageSize: 50 },
     });
 
     return response.data;

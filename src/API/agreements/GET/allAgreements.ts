@@ -40,8 +40,8 @@ export async function getAllAgreemets(
     const response = await axios.get(`${url}/agreements`, {
       headers,
       params: nextCursor
-        ? { cursor: nextCursor, pageSize: 20 }
-        : { pageSize: 20 },
+        ? { cursor: nextCursor, pageSize: 50 }
+        : { pageSize: 50 },
     });
 
     return response.data;
