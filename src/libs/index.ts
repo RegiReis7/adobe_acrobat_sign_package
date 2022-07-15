@@ -4,8 +4,8 @@ import { WidgetBundler } from "./bundlers/widgets/bundler";
 
 export class AcrobatSign{
     private configs : APIConfig
-    public agreements : AgreementBundler
-    public widgets : WidgetBundler
+    readonly agreements : AgreementBundler
+    readonly widgets : WidgetBundler
 
     constructor(token : string, api_user : string){
         this.configs = new APIConfig(token, api_user)
