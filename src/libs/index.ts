@@ -2,7 +2,7 @@ import { APIConfig } from "../API/config";
 import { AgreementBundler } from "./bundlers/agreements/bundler";
 import { WidgetBundler } from "./bundlers/widgets/bundler";
 
-export default class AcrobatSign{
+export class AcrobatSign{
     private configs : APIConfig
     public agreements : AgreementBundler
     public widgets : WidgetBundler
