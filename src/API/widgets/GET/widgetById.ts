@@ -127,7 +127,7 @@ export async function getWidgetById(
   url: string,
   headers: Headers,
   widgetId: string
-) {
+) : Promise<WidgetInfo> {
   try {
     const response = await axios.get(`${url}/widgets/${widgetId}`, {
       headers,
