@@ -1,12 +1,17 @@
-import { AcrobatSign } from "./libs/acrobatSign";
+import AcrobatSign from "./libs";
 
-const Adobe_Sign = new AcrobatSign(
-  "3AAABLblqZhDsaXQRsxlUuk6tM3aqj6XYGbi8uGRYJUXruPeg0uPUzrtLuQbWB8lfQRkp-NPQ7LCCFN7dGB8WLgivQLQqE3VS",
-  "reginaldo.reis+demo2@vilt-group.com"
-);
+const token =
+  "3AAABLblqZhDsaXQRsxlUuk6tM3aqj6XYGbi8uGRYJUXruPeg0uPUzrtLuQbWB8lfQRkp-NPQ7LCCFN7dGB8WLgivQLQqE3VS";
 
-Adobe_Sign.agreements.get.agreementFormData("CBJCHBCAABAAYB0lkHp3bH0emH21KusKd2iDRKLg_JnG")
-  .then(async (result) => {
-    console.log(result)
+const apiUser = "reginaldo.reis+demo2@vilt-group.com";
+
+const Adobe_Sign = new AcrobatSign(token, apiUser);
+
+Adobe_Sign.widgets.get
+  .widgetMembers("CBJCHBCAABAAnqRCTIiQccSzatgD6KbFwbxwmK_bQDKQ")
+  .then((result) => {
+    console.log(result);
   })
-  .catch((error) => console.error(error));
+  .catch((error) => {
+    throw new Error(error);
+  });

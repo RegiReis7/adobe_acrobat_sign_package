@@ -1,14 +1,14 @@
 import axios from "axios";
 import { Headers } from "../../config/types";
 
-export async function getAgreementFormData(
+export async function getWidgetDocumentUrl(
   url: string,
   headers: Headers,
-  agreementId: string
-): Promise<{ formDataList: [] }> {
+  widgetId: string
+): Promise<{ url: string }> {
   try {
     const response = await axios.get(
-      `${url}/agreements/${agreementId}/formData`,
+      `${url}/widgets/${widgetId}/combinedDocument/url`,
       {
         headers,
       }

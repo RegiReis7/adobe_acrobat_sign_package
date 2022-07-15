@@ -1,24 +1,27 @@
 import axios from "axios";
 import { Headers } from "../../config/types";
 
-export interface AgreementsListResponse {
+export interface WidgetAgreements {
+  page: Page;
   userAgreementList: UserAgreementList[];
-  page: {
-    nextCursor: string;
-  };
 }
+
+export interface Page {
+  nextCursor: string;
+}
+
 export interface UserAgreementList {
+  displayDate: string;
+  displayParticipantSetInfos: DisplayParticipantSetInfo[];
+  esign: boolean;
+  groupId: string;
+  hidden: boolean;
+  latestVersionId: string;
+  name: string;
+  status: string;
   id: string;
   parentId: string;
   type: string;
-  name: string;
-  groupId: string;
-  displayDate: Date;
-  displayParticipantSetInfos: DisplayParticipantSetInfo[];
-  latestVersionId: string;
-  status: string;
-  esign: boolean;
-  hidden: boolean;
 }
 
 export interface DisplayParticipantSetInfo {
@@ -26,18 +29,19 @@ export interface DisplayParticipantSetInfo {
 }
 
 export interface DisplayUserSetMemberInfo {
-  fullName: string;
   email: string;
   company: string;
+  fullName: string;
 }
 
-export async function getAllAgreemets(
+export async function getWidgetAgreements(
   url: string,
   headers: Headers,
+  widgetId: string,
   nextCursor?: string
-): Promise<AgreementsListResponse> {
+): Promise<WidgetAgreements> {
   try {
-    const response = await axios.get(`${url}/agreements`, {
+    const response = await axios.get(`${url}/widgets/${widgetId}/agreements`, {
       headers,
       params: nextCursor
         ? { cursor: nextCursor, pageSize: 20 }

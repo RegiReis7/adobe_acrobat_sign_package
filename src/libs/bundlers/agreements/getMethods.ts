@@ -7,10 +7,10 @@ import { getAgreementFormData } from "../../../API/agreements/GET/agreementFormD
 import { getAgreementMembers } from "../../../API/agreements/GET/agreementMembers";
 import { getAgreementSigningUrls } from "../../../API/agreements/GET/agreementSigningUrls";
 
-export class AgreementsGetMehotds {
+export class AgreementGetMehotds {
   constructor(private readonly config: APIConfig) {}
 
-  async agreements(nextCursor?: string) {
+  async allAgreements(nextCursor?: string) {
     return getAllAgreemets(
       await this.config.getAPIUrl(),
       this.config.getHeaders(),
